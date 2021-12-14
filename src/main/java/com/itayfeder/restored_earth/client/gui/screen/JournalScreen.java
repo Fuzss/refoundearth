@@ -5,6 +5,7 @@ import com.itayfeder.restored_earth.init.EntityInit;
 import com.itayfeder.restored_earth.utils.JournalEntry;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.chat.NarratorChatListener;
 import net.minecraft.client.gui.screen.Screen;
@@ -23,6 +24,8 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.*;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.Collections;
 import java.util.List;
@@ -43,6 +46,10 @@ public class JournalScreen extends Screen {
         this.playTurnSound = p_i51099_2_;
         this.currentPage = MathHelper.clamp(this.currentPage, 0, getPageCount());
         this.cachedPage = -1;
+    }
+
+    public static void open(World world) {
+        Minecraft.getInstance().setScreen(new JournalScreen(world, true));
     }
 
     public boolean setPage(int p_214160_1_) {

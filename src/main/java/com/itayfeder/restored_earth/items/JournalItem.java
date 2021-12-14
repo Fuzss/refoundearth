@@ -30,7 +30,7 @@ public class JournalItem extends Item {
     @Override
     public ActionResult<ItemStack> use(World p_77659_1_, PlayerEntity p_77659_2_, Hand p_77659_3_) {
         if (p_77659_1_.isClientSide()) {
-            Minecraft.getInstance().setScreen(new JournalScreen(p_77659_1_, true));
+            JournalScreen.open(p_77659_1_);
         }
         else {
             ServerPlayerEntity serverPlayer = p_77659_2_.getServer().getPlayerList().getPlayer(p_77659_2_.getUUID());
