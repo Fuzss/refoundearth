@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "restored_earth:block/carved_melon",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "restored_earth:block/carved_melon"
+    },
+    "facing=south": {
+      "model": "restored_earth:block/carved_melon",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "restored_earth:block/carved_melon",
+      "y": 270
+    }
+  }
+}
