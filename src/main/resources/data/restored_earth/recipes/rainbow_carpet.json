@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "restored_earth:rainbow_wool"
+    }
+  },
+  "result": {
+    "item": "restored_earth:rainbow_carpet",
+    "count": 3
+  }
+}
