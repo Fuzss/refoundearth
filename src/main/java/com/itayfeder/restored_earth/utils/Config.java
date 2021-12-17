@@ -24,6 +24,7 @@ public class Config {
     public static ForgeConfigSpec.BooleanValue BONE_SPIDER_SPAWNING;
     public static ForgeConfigSpec.BooleanValue MOOLIP_SPAWNING;
     public static ForgeConfigSpec.BooleanValue CLUCKSHROOM_SPAWNING;
+    public static ForgeConfigSpec.BooleanValue LOBBER_ZOMBIE_SPAWNING;
 
     static {
         ForgeConfigSpec.Builder SERVER_BUILDER = new ForgeConfigSpec.Builder();
@@ -55,6 +56,8 @@ public class Config {
                 .define("moolipSpawn", true);
         CLUCKSHROOM_SPAWNING = SERVER_BUILDER.comment("Will the Cluckshroom spawn in the wild")
                 .define("cluckshroomSpawn", true);
+        LOBBER_ZOMBIE_SPAWNING = SERVER_BUILDER.comment("Will the Lobber Zombie spawn in the wild")
+                .define("lobberZombieSpawn", true);
         SERVER_BUILDER.pop();
 
 

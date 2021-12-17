@@ -53,6 +53,7 @@ public class WorldSpawnEventHandler {
                     !BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH)) {
                 if (Config.VILER_WITCH_SPAWNING.get()) event.getSpawns().addSpawn(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityInit.VILER_WITCH, 2, 1, 1));
                 if (Config.BOULDERING_ZOMBIE_SPAWNING.get()) event.getSpawns().addSpawn(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityInit.BOULDERING_ZOMBIE, 6, 1, 1));
+                if (Config.LOBBER_ZOMBIE_SPAWNING.get()) event.getSpawns().addSpawn(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityInit.LOBBER_ZOMBIE, 6, 1, 1));
             }
 
 
