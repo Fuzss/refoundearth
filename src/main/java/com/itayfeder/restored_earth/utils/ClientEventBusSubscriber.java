@@ -9,6 +9,7 @@ import com.itayfeder.restored_earth.client.renderer.entities.models.layers.Rainb
 import com.itayfeder.restored_earth.init.BlockEntityInit;
 import com.itayfeder.restored_earth.init.BlockInit;
 import com.itayfeder.restored_earth.init.EntityInit;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.CowModel;
 import net.minecraft.client.model.SnowGolemModel;
 import net.minecraft.client.model.SpiderModel;
@@ -17,6 +18,7 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -46,8 +48,10 @@ public class ClientEventBusSubscriber {
         EntityRenderers.register(EntityInit.BONE_SPIDER, BoneSpiderRenderer::new);
         EntityRenderers.register(EntityInit.MOOLIP, MoolipRenderer::new);
         EntityRenderers.register(EntityInit.CLUCKSHROOM, CluckshroomRenderer::new);
+        EntityRenderers.register(EntityInit.LOBBER_ZOMBIE, LobberZombieRenderer::new);
 
         EntityRenderers.register(EntityInit.MELON_SEED, MelonSeedRenderer::new);
+        EntityRenderers.register(EntityInit.ROTTEN_FLESH, ThrownItemRenderer::new);
 
     }
 
@@ -71,6 +75,7 @@ public class ClientEventBusSubscriber {
         event.registerLayerDefinition(ModModelLayers.BONE_SPIDER, () -> SpiderModel.createSpiderBodyLayer());
         event.registerLayerDefinition(ModModelLayers.MOOLIP, () -> CowModel.createBodyLayer());
         event.registerLayerDefinition(ModModelLayers.CLUCKSHROOM, () -> CluckshroomModel.createBodyLayer());
+        event.registerLayerDefinition(ModModelLayers.LOBBER_ZOMBIE, () -> LobberZombieModel.createBodyLayer(CubeDeformation.NONE));
 
         event.registerLayerDefinition(ModModelLayers.MELON_SEED, () -> MelonSeedModel.createBodyLayer());
 

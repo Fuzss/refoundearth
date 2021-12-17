@@ -24,5 +24,6 @@ public class ModModelLayers {
     public static ModelLayerLocation MELON_SEED = new ModelLayerLocation(new ResourceLocation(RestoredEarthMod.MOD_ID, "melon_seed"), "melon_seed");
     public static ModelLayerLocation MOOLIP = new ModelLayerLocation(new ResourceLocation(RestoredEarthMod.MOD_ID, "moolip"), "moolip");
     public static ModelLayerLocation CLUCKSHROOM = new ModelLayerLocation(new ResourceLocation(RestoredEarthMod.MOD_ID, "cluckshroom"), "cluckshroom");
+    public static ModelLayerLocation LOBBER_ZOMBIE = new ModelLayerLocation(new ResourceLocation(RestoredEarthMod.MOD_ID, "lobber_zombie"), "lobber_zombie");
 
 }
