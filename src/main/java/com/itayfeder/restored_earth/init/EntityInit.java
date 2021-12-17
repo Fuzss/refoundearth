@@ -1,7 +1,7 @@
 package com.itayfeder.restored_earth.init;
 
 import com.itayfeder.restored_earth.RestoredEarthMod;
-import com.itayfeder.restored_earth.client.RottenFleshEntity;
+import com.itayfeder.restored_earth.entities.projectiles.RottenFleshEntity;
 import com.itayfeder.restored_earth.entities.*;
 import com.itayfeder.restored_earth.entities.projectiles.MelonSeedEntity;
 import com.itayfeder.restored_earth.utils.JournalEntry;
@@ -9,10 +9,6 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.monster.MonsterEntity;
-import net.minecraft.entity.monster.ZombieEntity;
-import net.minecraft.entity.passive.AnimalEntity;
-import net.minecraft.entity.passive.IronGolemEntity;
-import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.gen.Heightmap;

@@ -1,13 +1,11 @@
-package com.itayfeder.restored_earth.client;
+package com.itayfeder.restored_earth.entities.projectiles;
 
 import com.itayfeder.restored_earth.init.EntityInit;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.monster.BlazeEntity;
 import net.minecraft.entity.projectile.ProjectileItemEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.network.IPacket;
 import net.minecraft.particles.IParticleData;
@@ -37,6 +35,11 @@ public class RottenFleshEntity extends ProjectileItemEntity {
 
     public RottenFleshEntity(FMLPlayMessages.SpawnEntity spawnEntity, World world) {
         this(EntityInit.ROTTEN_FLESH, world);
+    }
+
+    @Override
+    public IPacket<?> getAddEntityPacket() {
+        return NetworkHooks.getEntitySpawningPacket(this);
     }
 
     @Override

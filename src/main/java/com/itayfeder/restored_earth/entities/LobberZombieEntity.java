@@ -1,12 +1,11 @@
 package com.itayfeder.restored_earth.entities;
 
-import com.itayfeder.restored_earth.client.RottenFleshEntity;
+import com.itayfeder.restored_earth.entities.projectiles.RottenFleshEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.entity.monster.ZombieEntity;
-import net.minecraft.entity.projectile.SnowballEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
