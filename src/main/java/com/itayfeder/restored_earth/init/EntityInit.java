@@ -3,6 +3,7 @@ package com.itayfeder.restored_earth.init;
 import com.itayfeder.restored_earth.RestoredEarthMod;
 import com.itayfeder.restored_earth.entities.*;
 import com.itayfeder.restored_earth.entities.projectiles.MelonSeed;
+import com.itayfeder.restored_earth.entities.projectiles.RottenFlesh;
 import com.itayfeder.restored_earth.utils.JournalEntry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -90,6 +91,10 @@ public class EntityInit {
             .sized(0.4F, 0.8F).clientTrackingRange(10)
             .build(new ResourceLocation(RestoredEarthMod.MOD_ID, "cluckshroom").toString());
 
+    public static final EntityType<LobberZombie> LOBBER_ZOMBIE = EntityType.Builder.<LobberZombie>of(LobberZombie::new, MobCategory.MONSTER)
+            .sized(0.6F, 1.95F).clientTrackingRange(8)
+            .build(new ResourceLocation(RestoredEarthMod.MOD_ID, "lobber_zombie").toString());
+
     public static final JournalEntry[] JOURNAL_ENTRIES = {
             new JournalEntry(MUDDY_PIG, 30, EntityType.PIG, ItemInit.MUDDY_PIG_SPAWN_EGG),
             new JournalEntry(WOOLY_COW, 28, EntityType.COW, ItemInit.WOOLY_COW_SPAWN_EGG),
@@ -106,13 +111,18 @@ public class EntityInit {
             new JournalEntry(SKELETON_WOLF, 36, EntityType.WOLF, ItemInit.SKELETON_WOLF_SPAWN_EGG),
             new JournalEntry(BONE_SPIDER, 24, EntityType.SPIDER, ItemInit.BONE_SPIDER_SPAWN_EGG),
             new JournalEntry(MOOLIP, 28, EntityType.COW, ItemInit.MOOLIP_SPAWN_EGG),
-            new JournalEntry(CLUCKSHROOM, 36, EntityType.CHICKEN, ItemInit.CLUCKSHROOM_SPAWN_EGG)
+            new JournalEntry(CLUCKSHROOM, 36, EntityType.CHICKEN, ItemInit.CLUCKSHROOM_SPAWN_EGG),
+            new JournalEntry(LOBBER_ZOMBIE, 24, EntityType.ZOMBIE, ItemInit.LOBBER_ZOMBIE_SPAWN_EGG)
     };
 
     //PROJECTILES
     public static final EntityType<MelonSeed> MELON_SEED = EntityType.Builder.<MelonSeed>of(MelonSeed::new, MobCategory.MISC)
             .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10)
             .build(new ResourceLocation(RestoredEarthMod.MOD_ID, "melon_seed").toString());
+
+    public static final EntityType<RottenFlesh> ROTTEN_FLESH = EntityType.Builder.<RottenFlesh>of(RottenFlesh::new, MobCategory.MISC)
+            .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).setCustomClientFactory(RottenFlesh::new)
+            .build(new ResourceLocation(RestoredEarthMod.MOD_ID, "rotten_flesh").toString());
 
     @SubscribeEvent
     public static void registerEntity(RegistryEvent.Register<EntityType<?>> event) {
@@ -132,8 +142,10 @@ public class EntityInit {
         event.getRegistry().register(BONE_SPIDER.setRegistryName("bone_spider"));
         event.getRegistry().register(MOOLIP.setRegistryName("moolip"));
         event.getRegistry().register(CLUCKSHROOM.setRegistryName("cluckshroom"));
+        event.getRegistry().register(LOBBER_ZOMBIE.setRegistryName("lobber_zombie"));
 
         event.getRegistry().register(MELON_SEED.setRegistryName("melon_seed"));
+        event.getRegistry().register(ROTTEN_FLESH.setRegistryName("rotten_flesh"));
     }
 
     @SubscribeEvent
@@ -154,6 +166,7 @@ public class EntityInit {
         event.put(BONE_SPIDER, BoneSpider.createAttributes().build());
         event.put(MOOLIP, Moolip.createAttributes().build());
         event.put(CLUCKSHROOM, Cluckshroom.createAttributes().build());
+        event.put(LOBBER_ZOMBIE, LobberZombie.createAttributes().build());
     }
 
     static {
@@ -161,5 +174,6 @@ public class EntityInit {
         SpawnPlacements.register(BOULDERING_ZOMBIE,  SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules);
         SpawnPlacements.register(SKELETON_WOLF, SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules);
         SpawnPlacements.register(BONE_SPIDER, SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules);
+        SpawnPlacements.register(LOBBER_ZOMBIE, SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules);
     }
 }

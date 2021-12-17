@@ -60,6 +60,7 @@ public class WorldSpawnEventHandler {
                     !BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH)) {
                 if (Config.VILER_WITCH_SPAWNING.get()) event.getSpawns().addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityInit.VILER_WITCH, 3, 1, 1));
                 if (Config.BOULDERING_ZOMBIE_SPAWNING.get()) event.getSpawns().addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityInit.BOULDERING_ZOMBIE, 6, 1, 1));
+                if (Config.LOBBER_ZOMBIE_SPAWNING.get()) event.getSpawns().addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityInit.LOBBER_ZOMBIE, 6, 1, 1));
             }
 
             if (event.getName().toString().contains("minecraft:beach") || event.getName().toString().contains("minecraft:stone_shore")) {

@@ -36,9 +36,9 @@ public class ItemInit {
     public static final Item BOULDERING_ZOMBIE_SPAWN_EGG = new SpawnEggItem(EntityInit.BOULDERING_ZOMBIE, 5068634, 5909021, (new Item.Properties()).tab(CreativeModeTab.TAB_MISC));
     public static final Item SKELETON_WOLF_SPAWN_EGG = new SpawnEggItem(EntityInit.SKELETON_WOLF, 13355465, 14954030, (new Item.Properties()).tab(CreativeModeTab.TAB_MISC));
     public static final Item BONE_SPIDER_SPAWN_EGG = new SpawnEggItem(EntityInit.BONE_SPIDER, 3938857, 14084069, (new Item.Properties()).tab(CreativeModeTab.TAB_MISC));
-
     public static final Item MOOLIP_SPAWN_EGG = new SpawnEggItem(EntityInit.MOOLIP, 16226494, 16644026, (new Item.Properties()).tab(CreativeModeTab.TAB_MISC));
     public static final Item CLUCKSHROOM_SPAWN_EGG = new SpawnEggItem(EntityInit.CLUCKSHROOM, 13835810, 16171930, (new Item.Properties()).tab(CreativeModeTab.TAB_MISC));
+    public static final Item LOBBER_ZOMBIE_SPAWN_EGG = new SpawnEggItem(EntityInit.LOBBER_ZOMBIE, 9015924, 6323223, (new Item.Properties()).tab(CreativeModeTab.TAB_MISC));
 
     public static final Item JOURNAL = new JournalItem((new Item.Properties()).tab(CreativeModeTab.TAB_MATERIALS));
 
@@ -74,6 +74,7 @@ public class ItemInit {
         register(registry.getRegistry(), BONE_SPIDER_SPAWN_EGG, "bone_spider_spawn_egg");
         register(registry.getRegistry(), MOOLIP_SPAWN_EGG, "moolip_spawn_egg");
         register(registry.getRegistry(), CLUCKSHROOM_SPAWN_EGG, "cluckshroom_spawn_egg");
+        register(registry.getRegistry(), LOBBER_ZOMBIE_SPAWN_EGG, "lobber_zombie_spawn_egg");
 
         register(registry.getRegistry(), JOURNAL, "journal");
     }
