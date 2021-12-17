@@ -6,9 +6,11 @@ import com.itayfeder.restored_earth.client.renderer.entities.*;
 import com.itayfeder.restored_earth.init.BlockEntityInit;
 import com.itayfeder.restored_earth.init.BlockInit;
 import com.itayfeder.restored_earth.init.EntityInit;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.entity.LlamaSpitRenderer;
+import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraft.client.renderer.tileentity.BedTileEntityRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.entity.projectile.LlamaSpitEntity;
@@ -45,8 +47,10 @@ public class ClientEventBusSubscriber {
         RenderingRegistry.registerEntityRenderingHandler(EntityInit.BONE_SPIDER, BoneSpiderRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityInit.MOOLIP, MoolipRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityInit.CLUCKSHROOM, CluckshroomRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityInit.LOBBER_ZOMBIE, LobberZombieRenderer::new);
 
         RenderingRegistry.registerEntityRenderingHandler(EntityInit.MELON_SEED, MelonSeedRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityInit.ROTTEN_FLESH, manager -> new SpriteRenderer<>(manager, Minecraft.getInstance().getItemRenderer()));
 
     }
 }

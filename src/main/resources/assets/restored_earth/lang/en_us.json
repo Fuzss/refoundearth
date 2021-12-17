@@ -16,6 +16,7 @@
   "entity.restored_earth.bone_spider": "Bone Spider",
   "entity.restored_earth.moolip": "Moolip",
   "entity.restored_earth.cluckshroom": "Cluckshroom",
+  "entity.restored_earth.lobber_zombie": "Lobber Zombie",
 
   "item.restored_earth.muddy_pig_spawn_egg": "Muddy Pig Spawn Egg",
   "item.restored_earth.wooly_cow_spawn_egg": "Wooly Cow Spawn Egg",
@@ -32,6 +33,7 @@
   "item.restored_earth.bone_spider_spawn_egg": "Bone Spider Spawn Egg",
   "item.restored_earth.moolip_spawn_egg": "Moolip Spawn Egg",
   "item.restored_earth.cluckshroom_spawn_egg": "Cluckshroom Spawn Egg",
+  "item.restored_earth.lobber_zombie_spawn_egg": "Lobber Zombie Spawn Egg",
 
   "block.restored_earth.mud": "Mud",
   "block.restored_earth.rainbow_wool": "Rainbow Wool",

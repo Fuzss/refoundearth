@@ -1,6 +1,7 @@
 package com.itayfeder.restored_earth.init;
 
 import com.itayfeder.restored_earth.RestoredEarthMod;
+import com.itayfeder.restored_earth.client.RottenFleshEntity;
 import com.itayfeder.restored_earth.entities.*;
 import com.itayfeder.restored_earth.entities.projectiles.MelonSeedEntity;
 import com.itayfeder.restored_earth.utils.JournalEntry;
@@ -86,6 +87,10 @@ public class EntityInit {
             .sized(0.4F, 0.8F).clientTrackingRange(10)
             .build(new ResourceLocation(RestoredEarthMod.MOD_ID, "cluckshroom").toString());
 
+    public static final EntityType<LobberZombieEntity> LOBBER_ZOMBIE = EntityType.Builder.<LobberZombieEntity>of(LobberZombieEntity::new, EntityClassification.MONSTER)
+            .sized(0.6F, 1.95F).clientTrackingRange(8)
+            .build(new ResourceLocation(RestoredEarthMod.MOD_ID, "lobber_zombie").toString());
+
     public static final JournalEntry[] JOURNAL_ENTRIES = {
             new JournalEntry(MUDDY_PIG, 30, EntityType.PIG, ItemInit.MUDDY_PIG_SPAWN_EGG),
             new JournalEntry(WOOLY_COW, 28, EntityType.COW, ItemInit.WOOLY_COW_SPAWN_EGG),
@@ -102,13 +107,18 @@ public class EntityInit {
             new JournalEntry(SKELETON_WOLF, 36, EntityType.WOLF, ItemInit.SKELETON_WOLF_SPAWN_EGG),
             new JournalEntry(BONE_SPIDER, 24, EntityType.SPIDER, ItemInit.BONE_SPIDER_SPAWN_EGG),
             new JournalEntry(MOOLIP, 28, EntityType.COW, ItemInit.MOOLIP_SPAWN_EGG),
-            new JournalEntry(CLUCKSHROOM, 36, EntityType.CHICKEN, ItemInit.CLUCKSHROOM_SPAWN_EGG)
+            new JournalEntry(CLUCKSHROOM, 36, EntityType.CHICKEN, ItemInit.CLUCKSHROOM_SPAWN_EGG),
+            new JournalEntry(LOBBER_ZOMBIE, 24, EntityType.ZOMBIE, ItemInit.LOBBER_ZOMBIE_SPAWN_EGG)
     };
 
     //PROJECTILES
     public static final EntityType<MelonSeedEntity> MELON_SEED = EntityType.Builder.<MelonSeedEntity>of(MelonSeedEntity::new, EntityClassification.MISC)
             .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10)
             .build(new ResourceLocation(RestoredEarthMod.MOD_ID, "melon_seed").toString());
+
+    public static final EntityType<RottenFleshEntity> ROTTEN_FLESH = EntityType.Builder.<RottenFleshEntity>of(RottenFleshEntity::new, EntityClassification.MISC)
+            .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).setCustomClientFactory(RottenFleshEntity::new)
+            .build(new ResourceLocation(RestoredEarthMod.MOD_ID, "rotten_flesh").toString());
 
     @SubscribeEvent
     public static void registerEntity(RegistryEvent.Register<EntityType<?>> event) {
@@ -128,8 +138,10 @@ public class EntityInit {
         event.getRegistry().register(BONE_SPIDER.setRegistryName("bone_spider"));
         event.getRegistry().register(MOOLIP.setRegistryName("moolip"));
         event.getRegistry().register(CLUCKSHROOM.setRegistryName("cluckshroom"));
+        event.getRegistry().register(LOBBER_ZOMBIE.setRegistryName("lobber_zombie"));
 
         event.getRegistry().register(MELON_SEED.setRegistryName("melon_seed"));
+        event.getRegistry().register(ROTTEN_FLESH.setRegistryName("rotten_flesh"));
     }
 
     @SubscribeEvent
@@ -150,6 +162,7 @@ public class EntityInit {
         event.put(BONE_SPIDER, BoneSpiderEntity.createAttributes().build());
         event.put(MOOLIP, MoolipEntity.createAttributes().build());
         event.put(CLUCKSHROOM, CluckshroomEntity.createAttributes().build());
+        event.put(LOBBER_ZOMBIE, LobberZombieEntity.createAttributes().build());
     }
 
     static {
@@ -157,5 +170,6 @@ public class EntityInit {
         EntitySpawnPlacementRegistry.register(BOULDERING_ZOMBIE,  EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::checkMonsterSpawnRules);
         EntitySpawnPlacementRegistry.register(SKELETON_WOLF, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::checkMonsterSpawnRules);
         EntitySpawnPlacementRegistry.register(BONE_SPIDER, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, BoneSpiderEntity::checkMonsterSpawnRules);
+        EntitySpawnPlacementRegistry.register(LOBBER_ZOMBIE,  EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::checkMonsterSpawnRules);
     }
 }
