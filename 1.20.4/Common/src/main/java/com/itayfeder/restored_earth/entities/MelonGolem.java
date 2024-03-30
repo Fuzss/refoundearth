@@ -1,7 +1,7 @@
 package com.itayfeder.restored_earth.entities;
 
 import com.itayfeder.restored_earth.entities.projectiles.MelonSeed;
-import com.itayfeder.restored_earth.init.ItemInit;
+import fuzs.refoundearth.init.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -23,12 +23,9 @@ import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.AbstractGolem;
-import net.minecraft.world.entity.animal.SnowGolem;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.LlamaSpit;
-import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -153,7 +150,7 @@ public class MelonGolem extends AbstractGolem implements RangedAttackMob {
         this.level.playSound((Player)null, this, SoundEvents.SNOW_GOLEM_SHEAR, p_29907_, 1.0F, 1.0F);
         if (!this.level.isClientSide()) {
             this.setMelon(false);
-            this.spawnAtLocation(new ItemStack(ItemInit.CARVED_MELON), 1.7F);
+            this.spawnAtLocation(new ItemStack(ModItems.CARVED_MELON), 1.7F);
         }
 
     }

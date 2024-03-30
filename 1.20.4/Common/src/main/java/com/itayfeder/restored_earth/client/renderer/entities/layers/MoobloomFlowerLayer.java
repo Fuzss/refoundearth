@@ -1,7 +1,7 @@
 package com.itayfeder.restored_earth.client.renderer.entities.layers;
 
 import com.itayfeder.restored_earth.entities.Moobloom;
-import com.itayfeder.restored_earth.init.BlockInit;
+import fuzs.refoundearth.init.ModBlocks;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
 import net.minecraft.client.Minecraft;
@@ -14,7 +14,6 @@ import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.world.entity.animal.MushroomCow;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class MoobloomFlowerLayer <T extends Moobloom> extends RenderLayer<T, CowModel<T>> {
@@ -28,7 +27,7 @@ public class MoobloomFlowerLayer <T extends Moobloom> extends RenderLayer<T, Cow
             boolean flag = minecraft.shouldEntityAppearGlowing(p_117259_) && p_117259_.isInvisible();
             if (!p_117259_.isInvisible() || flag) {
                 BlockRenderDispatcher blockrenderdispatcher = minecraft.getBlockRenderer();
-                BlockState blockstate = BlockInit.BUTTERCUP.defaultBlockState();
+                BlockState blockstate = ModBlocks.BUTTERCUP.defaultBlockState();
                 int i = LivingEntityRenderer.getOverlayCoords(p_117259_, 0.0F);
                 BakedModel bakedmodel = blockrenderdispatcher.getBlockModel(blockstate);
                 p_117256_.pushPose();

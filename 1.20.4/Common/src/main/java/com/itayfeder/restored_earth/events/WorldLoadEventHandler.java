@@ -1,11 +1,10 @@
 package com.itayfeder.restored_earth.events;
 
-import com.itayfeder.restored_earth.RestoredEarthMod;
-import com.itayfeder.restored_earth.init.BlockInit;
+import fuzs.refoundearth.init.ModBlocks;
+import fuzs.refoundearth.RefoundEarth;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.features.FeatureUtils;
-import net.minecraft.data.worldgen.features.MiscOverworldFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
@@ -14,8 +13,6 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.LakeFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
@@ -29,10 +26,10 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = RestoredEarthMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = RefoundEarth.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class WorldLoadEventHandler {
     public static final ConfiguredFeature<?, ?> LAKE_MUD = FeatureUtils.register("lake_mud",
-            Feature.LAKE.configured(new LakeFeature.Configuration(BlockStateProvider.simple(BlockInit.MUD.defaultBlockState()), BlockStateProvider.simple(Blocks.DIRT.defaultBlockState()))));
+            Feature.LAKE.configured(new LakeFeature.Configuration(BlockStateProvider.simple(ModBlocks.MUD.defaultBlockState()), BlockStateProvider.simple(Blocks.DIRT.defaultBlockState()))));
     public static final PlacedFeature LAKE_MUD_SURFACE = PlacementUtils.register("lake_mud_surface",
             LAKE_MUD.placed(RarityFilter.onAverageOnceEvery(100), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 

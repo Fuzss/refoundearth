@@ -1,14 +1,11 @@
 package com.itayfeder.restored_earth.events;
 
-import com.itayfeder.restored_earth.RestoredEarthMod;
-import com.itayfeder.restored_earth.client.renderer.entities.FurnaceGolemRenderer;
-import com.itayfeder.restored_earth.entities.FurnaceGolem;
-import com.itayfeder.restored_earth.init.EntityInit;
+import fuzs.refoundearth.world.entity.animal.FurnaceGolem;
+import fuzs.refoundearth.init.ModEntityTypes;
+import fuzs.refoundearth.RefoundEarth;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -26,7 +23,7 @@ import net.minecraftforge.fml.common.Mod;
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
-@Mod.EventBusSubscriber(modid = RestoredEarthMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = RefoundEarth.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class BuildFurnaceGolemEventHandler {
     private static final Predicate<BlockState> PUMPKINS_PREDICATE = (p_210301_0_) -> {
         return p_210301_0_ != null && (p_210301_0_.is(Blocks.CARVED_PUMPKIN) || p_210301_0_.is(Blocks.JACK_O_LANTERN));
@@ -52,7 +49,7 @@ public class BuildFurnaceGolemEventHandler {
             }
 
             BlockPos blockpos = blockpattern$blockpatternmatch.getBlock(1, 2, 0).getPos();
-            FurnaceGolem irongolem = EntityInit.FURNACE_GOLEM.create(p_51379_);
+            FurnaceGolem irongolem = ModEntityTypes.FURNACE_GOLEM.create(p_51379_);
             irongolem.setPlayerCreated(true);
             irongolem.moveTo((double)blockpos.getX() + 0.5D, (double)blockpos.getY() + 0.05D, (double)blockpos.getZ() + 0.5D, 0.0F, 0.0F);
             p_51379_.addFreshEntity(irongolem);

@@ -1,22 +1,18 @@
 package com.itayfeder.restored_earth.client.renderer.entities;
 
-import com.itayfeder.restored_earth.RestoredEarthMod;
 import com.itayfeder.restored_earth.client.renderer.ModModelLayers;
 import com.itayfeder.restored_earth.client.renderer.entities.layers.VilerWitchItemLayer;
 import com.itayfeder.restored_earth.client.renderer.entities.models.VilerWitchModel;
-import com.itayfeder.restored_earth.entities.VilerWitch;
+import fuzs.refoundearth.world.entity.monster.VilerWitch;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.model.WitchModel;
-import net.minecraft.client.model.geom.ModelLayers;
+import fuzs.refoundearth.RefoundEarth;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.layers.WitchItemLayer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.monster.Witch;
 
 public class VilerWitchRenderer extends MobRenderer<VilerWitch, VilerWitchModel<VilerWitch>> {
-    private static final ResourceLocation VILER_WITCH_LOCATION = new ResourceLocation(RestoredEarthMod.MOD_ID,"textures/entity/viler_witch/viler_witch.png");
+    private static final ResourceLocation VILER_WITCH_LOCATION = new ResourceLocation(RefoundEarth.MOD_ID,"textures/entity/viler_witch/viler_witch.png");
 
     public VilerWitchRenderer(EntityRendererProvider.Context p_174443_) {
         super(p_174443_, new VilerWitchModel<>(p_174443_.bakeLayer(ModModelLayers.VILER_WITCH)), 0.5F);

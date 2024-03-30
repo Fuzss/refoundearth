@@ -1,10 +1,10 @@
 package com.itayfeder.restored_earth.client.renderer.blockentities;
 
-import com.itayfeder.restored_earth.RestoredEarthMod;
 import com.itayfeder.restored_earth.blockentities.RainbowBedBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Vector3f;
+import com.mojang.math.Axis;
+import fuzs.refoundearth.RefoundEarth;
 import it.unimi.dsi.fastutil.ints.Int2IntFunction;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.model.geom.ModelPart;
@@ -15,7 +15,6 @@ import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.blockentity.BrightnessCombiner;
@@ -33,7 +32,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BedPart;
 
 public class RainbowBedRenderer implements BlockEntityRenderer<RainbowBedBlockEntity> {
-    public static final Material BED_RESOURCE_LOCATION = new Material(TextureAtlas.LOCATION_BLOCKS, new ResourceLocation(RestoredEarthMod.MOD_ID, "entity/bed/rainbow"));
+    public static final Material BED_RESOURCE_LOCATION = new Material(TextureAtlas.LOCATION_BLOCKS, new ResourceLocation(
+            RefoundEarth.MOD_ID, "entity/bed/rainbow"));
 
     private final ModelPart headRoot;
     private final ModelPart footRoot;
@@ -75,15 +75,14 @@ public class RainbowBedRenderer implements BlockEntityRenderer<RainbowBedBlockEn
             this.renderPiece(p_112207_, p_112208_, this.headRoot, Direction.SOUTH, material, p_112209_, p_112210_, false);
             this.renderPiece(p_112207_, p_112208_, this.footRoot, Direction.SOUTH, material, p_112209_, p_112210_, true);
         }
-
     }
 
     private void renderPiece(PoseStack p_173542_, MultiBufferSource p_173543_, ModelPart p_173544_, Direction p_173545_, Material p_173546_, int p_173547_, int p_173548_, boolean p_173549_) {
         p_173542_.pushPose();
         p_173542_.translate(0.0D, 0.5625D, p_173549_ ? -1.0D : 0.0D);
-        p_173542_.mulPose(Vector3f.XP.rotationDegrees(90.0F));
+        p_173542_.mulPose(Axis.XP.rotationDegrees(90.0F));
         p_173542_.translate(0.5D, 0.5D, 0.5D);
-        p_173542_.mulPose(Vector3f.ZP.rotationDegrees(180.0F + p_173545_.toYRot()));
+        p_173542_.mulPose(Axis.ZP.rotationDegrees(180.0F + p_173545_.toYRot()));
         p_173542_.translate(-0.5D, -0.5D, -0.5D);
         VertexConsumer vertexconsumer = p_173546_.buffer(p_173543_, RenderType::entitySolid);
         p_173544_.render(p_173542_, vertexconsumer, p_173547_, p_173548_);

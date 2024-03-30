@@ -1,23 +1,18 @@
 package com.itayfeder.restored_earth.client.renderer.entities;
 
-import com.itayfeder.restored_earth.RestoredEarthMod;
 import com.itayfeder.restored_earth.client.renderer.ModModelLayers;
 import com.itayfeder.restored_earth.client.renderer.entities.layers.FurnaceGolemTorchLayer;
 import com.itayfeder.restored_earth.client.renderer.entities.models.FurnaceGolemModel;
-import com.itayfeder.restored_earth.entities.FurnaceGolem;
+import fuzs.refoundearth.world.entity.animal.FurnaceGolem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
-import net.minecraft.client.model.IronGolemModel;
-import net.minecraft.client.model.geom.ModelLayers;
+import fuzs.refoundearth.RefoundEarth;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.layers.IronGolemCrackinessLayer;
-import net.minecraft.client.renderer.entity.layers.IronGolemFlowerLayer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.animal.IronGolem;
 
 public class FurnaceGolemRenderer extends MobRenderer<FurnaceGolem, FurnaceGolemModel<FurnaceGolem>> {
-    private static final ResourceLocation FURNACE_GOLEM_LOCATION = new ResourceLocation(RestoredEarthMod.MOD_ID,"textures/entity/furnace_golem/furnace_golem.png");
+    private static final ResourceLocation FURNACE_GOLEM_LOCATION = new ResourceLocation(RefoundEarth.MOD_ID,"textures/entity/furnace_golem/furnace_golem.png");
 
     public FurnaceGolemRenderer(EntityRendererProvider.Context p_174188_) {
         super(p_174188_, new FurnaceGolemModel<>(p_174188_.bakeLayer(ModModelLayers.FURNACE_GOLEM)), 0.7F);

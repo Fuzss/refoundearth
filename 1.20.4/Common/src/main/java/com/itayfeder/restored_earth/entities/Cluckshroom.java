@@ -1,12 +1,9 @@
 package com.itayfeder.restored_earth.entities;
 
-import com.itayfeder.restored_earth.init.BlockInit;
-import com.itayfeder.restored_earth.init.EntityInit;
-import com.itayfeder.restored_earth.init.ItemInit;
+import fuzs.refoundearth.init.ModEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -15,15 +12,11 @@ import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Shearable;
 import net.minecraft.world.entity.animal.Chicken;
-import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.SuspiciousStewItem;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.FlowerBlock;
 
 public class Cluckshroom extends Chicken implements Shearable, net.minecraftforge.common.IForgeShearable {
     public Cluckshroom(EntityType<? extends Chicken> p_28236_, Level p_28237_) {
@@ -31,7 +24,7 @@ public class Cluckshroom extends Chicken implements Shearable, net.minecraftforg
     }
 
     public Cluckshroom getBreedOffspring(ServerLevel p_148884_, AgeableMob p_148885_) {
-        return EntityInit.CLUCKSHROOM.create(p_148884_);
+        return ModEntityTypes.CLUCKSHROOM.create(p_148884_);
     }
 
     public InteractionResult mobInteract(Player p_230254_1_, InteractionHand p_230254_2_) {

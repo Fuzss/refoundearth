@@ -1,7 +1,7 @@
 package com.itayfeder.restored_earth.client.renderer.entities.layers;
 
 import com.itayfeder.restored_earth.entities.Moolip;
-import com.itayfeder.restored_earth.init.BlockInit;
+import fuzs.refoundearth.init.ModBlocks;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
 import net.minecraft.client.Minecraft;
@@ -27,7 +27,7 @@ public class MoolipFlowerLayer <T extends Moolip> extends RenderLayer<T, CowMode
             boolean flag = minecraft.shouldEntityAppearGlowing(p_117259_) && p_117259_.isInvisible();
             if (!p_117259_.isInvisible() || flag) {
                 BlockRenderDispatcher blockrenderdispatcher = minecraft.getBlockRenderer();
-                BlockState blockstate = BlockInit.PINK_DAISY.defaultBlockState();
+                BlockState blockstate = ModBlocks.PINK_DAISY.defaultBlockState();
                 int i = LivingEntityRenderer.getOverlayCoords(p_117259_, 0.0F);
                 BakedModel bakedmodel = blockrenderdispatcher.getBlockModel(blockstate);
                 p_117256_.pushPose();

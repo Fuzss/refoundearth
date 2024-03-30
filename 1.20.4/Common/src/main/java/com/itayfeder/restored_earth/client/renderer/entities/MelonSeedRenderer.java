@@ -1,24 +1,21 @@
 package com.itayfeder.restored_earth.client.renderer.entities;
 
-import com.itayfeder.restored_earth.RestoredEarthMod;
 import com.itayfeder.restored_earth.client.renderer.ModModelLayers;
 import com.itayfeder.restored_earth.client.renderer.entities.models.MelonSeedModel;
 import com.itayfeder.restored_earth.entities.projectiles.MelonSeed;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Vector3f;
-import net.minecraft.client.model.LlamaSpitModel;
-import net.minecraft.client.model.geom.ModelLayers;
+import fuzs.refoundearth.RefoundEarth;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.projectile.LlamaSpit;
 
 public class MelonSeedRenderer extends EntityRenderer<MelonSeed> {
-    private static final ResourceLocation MELON_SEED_LOCATION = new ResourceLocation(RestoredEarthMod.MOD_ID,"textures/entity/melon_golem/melon_seed.png");
+    private static final ResourceLocation MELON_SEED_LOCATION = new ResourceLocation(RefoundEarth.MOD_ID,"textures/entity/melon_golem/melon_seed.png");
     private final MelonSeedModel<MelonSeed> model;
 
     public MelonSeedRenderer(EntityRendererProvider.Context p_174296_) {

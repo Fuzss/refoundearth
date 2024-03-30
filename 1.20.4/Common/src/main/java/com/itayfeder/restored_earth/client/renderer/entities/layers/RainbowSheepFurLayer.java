@@ -1,28 +1,23 @@
 package com.itayfeder.restored_earth.client.renderer.entities.layers;
 
-import com.itayfeder.restored_earth.RestoredEarthMod;
 import com.itayfeder.restored_earth.client.renderer.ModModelLayers;
 import com.itayfeder.restored_earth.client.renderer.entities.models.RainbowSheepModel;
 import com.itayfeder.restored_earth.client.renderer.entities.models.layers.RainbowSheepFurModel;
-import com.itayfeder.restored_earth.entities.RainbowSheep;
+import fuzs.refoundearth.world.entity.animal.RainbowSheep;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import fuzs.refoundearth.RefoundEarth;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.SheepFurModel;
-import net.minecraft.client.model.SheepModel;
 import net.minecraft.client.model.geom.EntityModelSet;
-import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.animal.Sheep;
-import net.minecraft.world.item.DyeColor;
 
 public class RainbowSheepFurLayer extends RenderLayer<RainbowSheep, RainbowSheepModel<RainbowSheep>> {
-    private static final ResourceLocation RAINBOW_SHEEP_FUR_LOCATION = new ResourceLocation(RestoredEarthMod.MOD_ID,"textures/entity/rainbow_sheep/rainbow_sheep_fur.png");
+    private static final ResourceLocation RAINBOW_SHEEP_FUR_LOCATION = new ResourceLocation(RefoundEarth.MOD_ID,"textures/entity/rainbow_sheep/rainbow_sheep_fur.png");
     private final RainbowSheepFurModel<RainbowSheep> model;
 
     public RainbowSheepFurLayer(RenderLayerParent<RainbowSheep, RainbowSheepModel<RainbowSheep>> p_174533_, EntityModelSet p_174534_) {

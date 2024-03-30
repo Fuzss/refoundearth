@@ -1,15 +1,15 @@
 package com.itayfeder.restored_earth.client.renderer.entities;
 
-import com.itayfeder.restored_earth.RestoredEarthMod;
 import com.itayfeder.restored_earth.client.renderer.ModModelLayers;
 import com.itayfeder.restored_earth.client.renderer.entities.models.LobberZombieModel;
-import com.itayfeder.restored_earth.entities.LobberZombie;
+import fuzs.refoundearth.world.entity.monster.LobberZombie;
+import fuzs.refoundearth.RefoundEarth;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.resources.ResourceLocation;
 
 public class LobberZombieRenderer extends HumanoidMobRenderer<LobberZombie, LobberZombieModel<LobberZombie>> {
-    private static final ResourceLocation LOBBER_ZOMBIE_LOCATION = new ResourceLocation(RestoredEarthMod.MOD_ID,"textures/entity/lobber_zombie/lobber_zombie.png");
+    private static final ResourceLocation LOBBER_ZOMBIE_LOCATION = new ResourceLocation(RefoundEarth.MOD_ID,"textures/entity/lobber_zombie/lobber_zombie.png");
 
     public LobberZombieRenderer(EntityRendererProvider.Context p_173952_) {
         super(p_173952_, new LobberZombieModel<>(p_173952_.bakeLayer(ModModelLayers.LOBBER_ZOMBIE)), 0.5F);

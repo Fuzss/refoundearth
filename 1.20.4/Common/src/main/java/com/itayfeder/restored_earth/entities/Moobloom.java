@@ -1,8 +1,8 @@
 package com.itayfeder.restored_earth.entities;
 
-import com.itayfeder.restored_earth.init.BlockInit;
-import com.itayfeder.restored_earth.init.EntityInit;
-import com.itayfeder.restored_earth.init.ItemInit;
+import fuzs.refoundearth.init.ModBlocks;
+import fuzs.refoundearth.init.ModEntityTypes;
+import fuzs.refoundearth.init.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -47,7 +47,7 @@ public class Moobloom extends Cow implements Shearable, net.minecraftforge.commo
         if (itemstack.getItem() == Items.BOWL && !this.isBaby()) {
             boolean flag = false;
             ItemStack itemstack1;
-            FlowerBlock block = (FlowerBlock) BlockInit.BUTTERCUP;
+            FlowerBlock block = (FlowerBlock) ModBlocks.BUTTERCUP;
             itemstack1 = new ItemStack(Items.SUSPICIOUS_STEW);
             SuspiciousStewItem.saveMobEffect(itemstack1, block.getSuspiciousStewEffect(), block.getEffectDuration());
 
@@ -98,7 +98,8 @@ public class Moobloom extends Cow implements Shearable, net.minecraftforge.commo
             this.level.addFreshEntity(cowentity);
 
             for(int i = 0; i < 5; ++i) {
-                this.level.addFreshEntity(new ItemEntity(this.level, this.getX(), this.getY(1.0D), this.getZ(), new ItemStack(ItemInit.BUTTERCUP)));
+                this.level.addFreshEntity(new ItemEntity(this.level, this.getX(), this.getY(1.0D), this.getZ(), new ItemStack(
+                        ModItems.BUTTERCUP)));
             }
         }
 
@@ -138,7 +139,7 @@ public class Moobloom extends Cow implements Shearable, net.minecraftforge.commo
 
             java.util.List<ItemStack> items = new java.util.ArrayList<>();
             for (int i = 0; i < 5; ++i) {
-                items.add(new ItemStack(ItemInit.BUTTERCUP));
+                items.add(new ItemStack(ModItems.BUTTERCUP));
             }
 
             return items;
@@ -148,6 +149,6 @@ public class Moobloom extends Cow implements Shearable, net.minecraftforge.commo
 
     @Override
     public Moobloom getBreedOffspring(ServerLevel p_241840_1_, AgeableMob p_241840_2_) {
-        return EntityInit.MOOBLOOM.create(p_241840_1_);
+        return ModEntityTypes.MOOBLOOM.create(p_241840_1_);
     }
 }

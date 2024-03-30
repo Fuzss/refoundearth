@@ -1,7 +1,7 @@
 package com.itayfeder.restored_earth.entities;
 
-import com.itayfeder.restored_earth.init.EntityInit;
-import com.itayfeder.restored_earth.utils.ModLootTables;
+import fuzs.refoundearth.init.ModEntityTypes;
+import fuzs.refoundearth.init.ModLootTables;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -29,7 +29,7 @@ public class WoolyCow extends Cow implements net.minecraftforge.common.IForgeShe
     private int eatAnimationTick;
 
     public WoolyCow(EntityType<? extends Cow> p_28285_, Level p_28286_) {
-        super(EntityInit.WOOLY_COW, p_28286_);
+        super(ModEntityTypes.WOOLY_COW, p_28286_);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class WoolyCow extends Cow implements net.minecraftforge.common.IForgeShe
     }
 
     public WoolyCow getBreedOffspring(ServerLevel p_148890_, AgeableMob p_148891_) {
-        return EntityInit.WOOLY_COW.create(p_148890_);
+        return ModEntityTypes.WOOLY_COW.create(p_148890_);
     }
 
     protected void defineSynchedData() {

@@ -1,7 +1,7 @@
 package com.itayfeder.restored_earth.client.renderer.entities.models;
 
 import com.google.common.collect.ImmutableList;
-import com.itayfeder.restored_earth.entities.SkeletonWolf;
+import fuzs.refoundearth.world.entity.monster.SkeletonWolf;
 import net.minecraft.client.model.ColorableAgeableListModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -10,7 +10,6 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.animal.Wolf;
 
 public class SkeletonWolfModel<T extends SkeletonWolf> extends ColorableAgeableListModel<T> {
     private static final String REAL_HEAD = "real_head";

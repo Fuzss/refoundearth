@@ -1,12 +1,11 @@
 package com.itayfeder.restored_earth.client.renderer.entities.models;
 
-import com.itayfeder.restored_earth.entities.BoulderingZombie;
+import fuzs.refoundearth.world.entity.monster.BoulderingZombie;
 import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.world.entity.monster.Monster;
 
 public class BoulderingZombieModel<T extends BoulderingZombie> extends HumanoidModel<T> {
 

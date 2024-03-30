@@ -1,7 +1,7 @@
 package com.itayfeder.restored_earth.client.renderer.entities.layers;
 
 import com.itayfeder.restored_earth.client.renderer.entities.models.FurnaceGolemModel;
-import com.itayfeder.restored_earth.entities.FurnaceGolem;
+import fuzs.refoundearth.world.entity.animal.FurnaceGolem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
 import net.minecraft.client.Minecraft;

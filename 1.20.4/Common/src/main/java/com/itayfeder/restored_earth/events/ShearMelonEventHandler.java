@@ -1,7 +1,7 @@
 package com.itayfeder.restored_earth.events;
 
-import com.itayfeder.restored_earth.RestoredEarthMod;
-import com.itayfeder.restored_earth.init.BlockInit;
+import fuzs.refoundearth.init.ModBlocks;
+import fuzs.refoundearth.RefoundEarth;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -17,7 +17,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = RestoredEarthMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = RefoundEarth.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ShearMelonEventHandler {
     @SubscribeEvent
     public static void blockInteract(PlayerInteractEvent.RightClickBlock event) {
@@ -31,7 +31,7 @@ public class ShearMelonEventHandler {
                     Direction direction = event.getHitVec().getDirection();
                     Direction direction1 = direction.getAxis() == Direction.Axis.Y ? playerEntity.getDirection().getOpposite() : direction;
                     world.playSound((Player) null, pos, SoundEvents.PUMPKIN_CARVE, SoundSource.BLOCKS, 1.0F, 1.0F);
-                    world.setBlock(pos, BlockInit.CARVED_MELON.defaultBlockState().setValue(CarvedPumpkinBlock.FACING, direction1), 11);
+                    world.setBlock(pos, ModBlocks.CARVED_MELON.defaultBlockState().setValue(CarvedPumpkinBlock.FACING, direction1), 11);
                     ItemEntity itementity = new ItemEntity(world, (double)pos.getX() + 0.5D + (double)direction1.getStepX() * 0.65D, (double)pos.getY() + 0.1D, (double)pos.getZ() + 0.5D + (double)direction1.getStepZ() * 0.65D, new ItemStack(Items.MELON_SEEDS, 4));
                     itementity.setDeltaMovement(0.05D * (double)direction1.getStepX() + world.random.nextDouble() * 0.02D, 0.05D, 0.05D * (double)direction1.getStepZ() + world.random.nextDouble() * 0.02D);
                     world.addFreshEntity(itementity);

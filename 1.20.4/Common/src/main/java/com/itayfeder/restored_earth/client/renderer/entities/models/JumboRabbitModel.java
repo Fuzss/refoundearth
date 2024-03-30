@@ -1,7 +1,7 @@
 package com.itayfeder.restored_earth.client.renderer.entities.models;
 
 import com.google.common.collect.ImmutableList;
-import com.itayfeder.restored_earth.entities.JumboRabbit;
+import fuzs.refoundearth.world.entity.animal.EarthRabbit;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
@@ -12,9 +12,8 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.animal.Rabbit;
 
-public class JumboRabbitModel<T extends JumboRabbit> extends EntityModel<T> {
+public class JumboRabbitModel<T extends EarthRabbit> extends EntityModel<T> {
     private final ModelPart leftRearFoot;
     private final ModelPart rightRearFoot;
     private final ModelPart leftHaunch;

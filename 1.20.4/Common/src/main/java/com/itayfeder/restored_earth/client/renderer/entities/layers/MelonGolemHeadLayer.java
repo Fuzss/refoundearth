@@ -1,8 +1,8 @@
 package com.itayfeder.restored_earth.client.renderer.entities.layers;
 
 import com.itayfeder.restored_earth.entities.MelonGolem;
-import com.itayfeder.restored_earth.init.BlockInit;
-import com.itayfeder.restored_earth.init.ItemInit;
+import fuzs.refoundearth.init.ModBlocks;
+import fuzs.refoundearth.init.ModItems;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
 import net.minecraft.client.Minecraft;
@@ -16,9 +16,7 @@ import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.world.entity.animal.SnowGolem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class MelonGolemHeadLayer extends RenderLayer<MelonGolem, SnowGolemModel<MelonGolem>> {
@@ -37,9 +35,9 @@ public class MelonGolemHeadLayer extends RenderLayer<MelonGolem, SnowGolemModel<
                 p_117494_.translate(0.0D, -0.34375D, 0.0D);
                 p_117494_.mulPose(Vector3f.YP.rotationDegrees(180.0F));
                 p_117494_.scale(0.625F, -0.625F, -0.625F);
-                ItemStack itemstack = new ItemStack(ItemInit.CARVED_MELON);
+                ItemStack itemstack = new ItemStack(ModItems.CARVED_MELON);
                 if (flag) {
-                    BlockState blockstate = BlockInit.CARVED_MELON.defaultBlockState();
+                    BlockState blockstate = ModBlocks.CARVED_MELON.defaultBlockState();
                     BlockRenderDispatcher blockrenderdispatcher = minecraft.getBlockRenderer();
                     BakedModel bakedmodel = blockrenderdispatcher.getBlockModel(blockstate);
                     int i = LivingEntityRenderer.getOverlayCoords(p_117497_, 0.0F);

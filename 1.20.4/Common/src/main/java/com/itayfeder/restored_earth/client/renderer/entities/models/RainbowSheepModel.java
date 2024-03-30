@@ -1,11 +1,10 @@
 package com.itayfeder.restored_earth.client.renderer.entities.models;
 
-import com.itayfeder.restored_earth.entities.RainbowSheep;
+import fuzs.refoundearth.world.entity.animal.RainbowSheep;
 import net.minecraft.client.model.QuadrupedModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.world.entity.animal.Sheep;
 
 public class RainbowSheepModel<T extends RainbowSheep> extends QuadrupedModel<T> {
     private float headXRot;

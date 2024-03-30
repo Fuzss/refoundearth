@@ -1,6 +1,6 @@
 package com.itayfeder.restored_earth.client.renderer.entities.models;
 
-import com.itayfeder.restored_earth.entities.LobberZombie;
+import fuzs.refoundearth.world.entity.monster.LobberZombie;
 import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;

@@ -13,8 +13,8 @@ import net.minecraft.world.level.Level;
 
 public class JournalItem extends Item {
 
-    public JournalItem(Item.Properties p_i48524_1_) {
-        super(p_i48524_1_);
+    public JournalItem(Item.Properties properties) {
+        super(properties);
     }
 
     @Override

@@ -1,19 +1,17 @@
 package com.itayfeder.restored_earth.client.renderer.entities;
 
-import com.itayfeder.restored_earth.RestoredEarthMod;
 import com.itayfeder.restored_earth.client.renderer.ModModelLayers;
 import com.itayfeder.restored_earth.client.renderer.entities.layers.CluckshroomMushroomLayer;
 import com.itayfeder.restored_earth.client.renderer.entities.models.CluckshroomModel;
-import com.itayfeder.restored_earth.client.renderer.entities.models.FancyChickenModel;
 import com.itayfeder.restored_earth.entities.Cluckshroom;
-import com.itayfeder.restored_earth.entities.FancyChicken;
+import fuzs.refoundearth.RefoundEarth;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
 public class CluckshroomRenderer extends MobRenderer<Cluckshroom, CluckshroomModel<Cluckshroom>> {
-    private static final ResourceLocation CLUCKSHROOM_LOCATION = new ResourceLocation(RestoredEarthMod.MOD_ID,"textures/entity/cluckshroom/cluckshroom.png");
+    private static final ResourceLocation CLUCKSHROOM_LOCATION = new ResourceLocation(RefoundEarth.MOD_ID,"textures/entity/cluckshroom/cluckshroom.png");
 
     public CluckshroomRenderer(EntityRendererProvider.Context p_i47211_1_) {
         super(p_i47211_1_, new CluckshroomModel<>(p_i47211_1_.bakeLayer(ModModelLayers.CLUCKSHROOM)), 0.3F);

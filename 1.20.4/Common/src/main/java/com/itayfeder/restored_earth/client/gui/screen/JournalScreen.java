@@ -1,11 +1,12 @@
 package com.itayfeder.restored_earth.client.gui.screen;
 
-import com.itayfeder.restored_earth.RestoredEarthMod;
-import com.itayfeder.restored_earth.init.EntityInit;
 import com.itayfeder.restored_earth.utils.JournalEntry;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
+import fuzs.refoundearth.RefoundEarth;
+import net.minecraft.client.GameNarrator;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.chat.NarratorChatListener;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
@@ -24,23 +25,20 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-import java.util.Collections;
-import java.util.List;
-
 public class JournalScreen extends Screen {
-    public static final ResourceLocation BOOK_LOCATION = new ResourceLocation(RestoredEarthMod.MOD_ID,"textures/gui/journal.png");
+    public static final ResourceLocation BOOK_LOCATION = new ResourceLocation(RefoundEarth.MOD_ID,"textures/gui/journal.png");
     private int currentPage;
     private int cachedPage = -1;
     private Component pageMsg = TextComponent.EMPTY;
     private PageButton forwardButton;
     private PageButton backButton;
     private final boolean playTurnSound;
-    private final Level world;
+    private final Level level;
 
-    public JournalScreen(Level world, boolean p_i51099_2_) {
-        super(NarratorChatListener.NO_TITLE);
-        this.world = world;
-        this.playTurnSound = p_i51099_2_;
+    public JournalScreen(Level level, boolean playTurnSound) {
+        super(GameNarrator.NO_TITLE);
+        this.level = level;
+        this.playTurnSound = playTurnSound;
         this.currentPage = Mth.clamp(this.currentPage, 0, getPageCount());
         this.cachedPage = -1;
     }
@@ -65,6 +63,7 @@ public class JournalScreen extends Screen {
         return this.setPage(p_214153_1_);
     }
 
+    @Override
     protected void init() {
         this.createMenuControls();
         this.createPageControlButtons();
@@ -111,9 +110,10 @@ public class JournalScreen extends Screen {
     }
 
     private static int getPageCount() {
-        return EntityInit.JOURNAL_ENTRIES.length;
+        return JournalEntry.JOURNAL_ENTRIES.length;
     }
 
+    @Override
     public boolean keyPressed(int p_231046_1_, int p_231046_2_, int p_231046_3_) {
         if (super.keyPressed(p_231046_1_, p_231046_2_, p_231046_3_)) {
             return true;
@@ -131,7 +131,7 @@ public class JournalScreen extends Screen {
         }
     }
 
-    public void render(PoseStack p_230430_1_, int p_230430_2_, int p_230430_3_, float p_230430_4_) {
+    public void render(GuiGraphics p_230430_1_, int p_230430_2_, int p_230430_3_, float p_230430_4_) {
         this.renderBackground(p_230430_1_);
         float xMouse = (float) p_230430_2_;
         float yMouse = (float) p_230430_3_;
@@ -153,12 +153,12 @@ public class JournalScreen extends Screen {
         //this.font.draw(p_230430_1_, ireorderingprocessor, (float)(i + 36), (float)(32 + 3 * 9), 0);
         float animalWidth = (this.width / 2) - 4;
         float animalHeight = (32 + 6 * 9);
-        JournalEntry entry = EntityInit.JOURNAL_ENTRIES[this.currentPage];
+        JournalEntry entry = JournalEntry.JOURNAL_ENTRIES[this.currentPage];
         EntityType type = entry.type;
         float size = entry.size;
         EntityType family = entry.family;
         Item egg = entry.egg;
-        InventoryScreen.renderEntityInInventory((int) animalWidth, (int) animalHeight, (int) size, (float) animalWidth - xMouse, (float) animalHeight - yMouse, (LivingEntity) type.create(this.world));
+        InventoryScreen.renderEntityInInventory((int) animalWidth, (int) animalHeight, (int) size, (float) animalWidth - xMouse, (float) animalHeight - yMouse, (LivingEntity) type.create(this.level));
         this.font.draw(p_230430_1_, new TextComponent("Name: " + getName("entity.restored_earth." + type.getRegistryName().getPath())), (float) (i + 36), (float) (32 + 8 * 9), 0);
         this.font.draw(p_230430_1_, new TextComponent(
                 "Health: " + (DefaultAttributes.getSupplier(type).getValue(Attributes.MAX_HEALTH)/2) + "\uF900"
@@ -174,10 +174,12 @@ public class JournalScreen extends Screen {
         return language.getOrDefault(str);
     }
 
+    @Override
     public boolean mouseClicked(double p_231044_1_, double p_231044_3_, int p_231044_5_) {
         return super.mouseClicked(p_231044_1_, p_231044_3_, p_231044_5_);
     }
 
+    @Override
     public boolean handleComponentClicked(Style p_98293_) {
         ClickEvent clickevent = p_98293_.getClickEvent();
         if (clickevent == null) {

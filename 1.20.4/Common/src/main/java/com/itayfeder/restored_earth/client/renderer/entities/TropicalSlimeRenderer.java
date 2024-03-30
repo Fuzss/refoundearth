@@ -1,20 +1,15 @@
 package com.itayfeder.restored_earth.client.renderer.entities;
 
-import com.itayfeder.restored_earth.RestoredEarthMod;
 import com.itayfeder.restored_earth.client.renderer.ModModelLayers;
 import com.itayfeder.restored_earth.client.renderer.entities.layers.TropicalSlimeOuterLayer;
 import com.itayfeder.restored_earth.client.renderer.entities.models.TropicalSlimeModel;
-import com.itayfeder.restored_earth.entities.TropicalSlime;
+import fuzs.refoundearth.world.entity.monster.TropicalSlime;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.model.SlimeModel;
-import net.minecraft.client.model.geom.ModelLayers;
+import fuzs.refoundearth.RefoundEarth;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.layers.SlimeOuterLayer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
-import net.minecraft.world.entity.monster.Slime;
 
 public class TropicalSlimeRenderer extends MobRenderer<TropicalSlime, TropicalSlimeModel<TropicalSlime>> {
 
@@ -35,8 +30,8 @@ public class TropicalSlimeRenderer extends MobRenderer<TropicalSlime, TropicalSl
     }
 
     public ResourceLocation getTextureLocation(TropicalSlime p_115974_) {
-        String loc = "textures/entity/tropical_slime/tropical_slime_" + (p_115974_.getAnimTimer()+1) + ".png";
-        return new ResourceLocation(RestoredEarthMod.MOD_ID, loc);
+        String loc = "textures/entity/tropical_slime/tropical_slime_" + (p_115974_.animationTicks) + ".png";
+        return new ResourceLocation(RefoundEarth.MOD_ID, loc);
 
     }
 }

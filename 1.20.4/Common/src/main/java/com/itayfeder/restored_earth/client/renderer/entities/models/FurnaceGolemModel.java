@@ -1,12 +1,11 @@
 package com.itayfeder.restored_earth.client.renderer.entities.models;
 
-import com.itayfeder.restored_earth.entities.FurnaceGolem;
+import fuzs.refoundearth.world.entity.animal.FurnaceGolem;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.animal.IronGolem;
 
 public class FurnaceGolemModel<T extends FurnaceGolem> extends HierarchicalModel<T> {
     private final ModelPart root;

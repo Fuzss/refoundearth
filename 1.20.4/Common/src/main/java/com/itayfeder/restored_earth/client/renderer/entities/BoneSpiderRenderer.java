@@ -1,19 +1,16 @@
 package com.itayfeder.restored_earth.client.renderer.entities;
 
-import com.itayfeder.restored_earth.RestoredEarthMod;
 import com.itayfeder.restored_earth.client.renderer.ModModelLayers;
-import com.itayfeder.restored_earth.entities.BoneSpider;
+import fuzs.refoundearth.world.entity.monster.BoneSpider;
+import fuzs.refoundearth.RefoundEarth;
 import net.minecraft.client.model.SpiderModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.layers.SpiderEyesLayer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.monster.Spider;
 
 public class BoneSpiderRenderer<T extends BoneSpider> extends MobRenderer<T, SpiderModel<T>> {
-    private static final ResourceLocation SPIDER_LOCATION = new ResourceLocation(RestoredEarthMod.MOD_ID,"textures/entity/bone_spider/bone_spider.png");
+    private static final ResourceLocation SPIDER_LOCATION = new ResourceLocation(RefoundEarth.MOD_ID,"textures/entity/bone_spider/bone_spider.png");
 
     public BoneSpiderRenderer(EntityRendererProvider.Context p_174401_) {
         this(p_174401_, ModModelLayers.BONE_SPIDER);
