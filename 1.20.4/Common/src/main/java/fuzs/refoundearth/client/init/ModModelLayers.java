@@ -1,9 +1,8 @@
-package com.itayfeder.restored_earth.client.renderer;
+package fuzs.refoundearth.client.init;
 
 import fuzs.puzzleslib.api.client.init.v1.ModelLayerFactory;
 import fuzs.refoundearth.RefoundEarth;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.resources.ResourceLocation;
 
 public class ModModelLayers {
     static final ModelLayerFactory MODEL_LAYERS = ModelLayerFactory.from(RefoundEarth.MOD_ID);
@@ -27,4 +26,6 @@ public class ModModelLayers {
     public static final ModelLayerLocation MOOLIP = MODEL_LAYERS.register("moolip");
     public static final ModelLayerLocation CLUCKSHROOM = MODEL_LAYERS.register("cluckshroom");
     public static final ModelLayerLocation LOBBER_ZOMBIE = MODEL_LAYERS.register("lobber_zombie");
+    public static final ModelLayerLocation LOBBER_ZOMBIE_INNER_ARMOR = MODEL_LAYERS.registerInnerArmor("lobber_zombie");
+    public static final ModelLayerLocation LOBBER_ZOMBIE_OUTER_ARMOR = MODEL_LAYERS.registerOuterArmor("lobber_zombie");
 }

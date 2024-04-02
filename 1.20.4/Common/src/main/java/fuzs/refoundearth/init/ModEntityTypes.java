@@ -1,16 +1,13 @@
 package fuzs.refoundearth.init;
 
 import com.itayfeder.restored_earth.entities.*;
-import com.itayfeder.restored_earth.entities.projectiles.MelonSeed;
-import com.itayfeder.restored_earth.entities.projectiles.RottenFlesh;
+import fuzs.refoundearth.world.entity.animal.*;
+import fuzs.refoundearth.world.entity.projectile.MelonSeed;
+import fuzs.refoundearth.world.entity.projectile.RottenFlesh;
 import fuzs.puzzleslib.api.core.v1.context.EntityAttributesCreateContext;
 import fuzs.puzzleslib.api.core.v1.context.SpawnPlacementsContext;
 import fuzs.puzzleslib.api.init.v3.registry.RegistryManager;
 import fuzs.refoundearth.RefoundEarth;
-import fuzs.refoundearth.world.entity.animal.EarthChicken;
-import fuzs.refoundearth.world.entity.animal.EarthRabbit;
-import fuzs.refoundearth.world.entity.animal.FurnaceGolem;
-import fuzs.refoundearth.world.entity.animal.RainbowSheep;
 import fuzs.refoundearth.world.entity.monster.*;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.EntityType;

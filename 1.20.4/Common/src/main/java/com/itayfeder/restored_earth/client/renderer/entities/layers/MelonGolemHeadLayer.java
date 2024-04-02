@@ -1,6 +1,6 @@
 package com.itayfeder.restored_earth.client.renderer.entities.layers;
 
-import com.itayfeder.restored_earth.entities.MelonGolem;
+import fuzs.refoundearth.world.entity.animal.MelonGolem;
 import fuzs.refoundearth.init.ModBlocks;
 import fuzs.refoundearth.init.ModItems;
 import com.mojang.blaze3d.vertex.PoseStack;

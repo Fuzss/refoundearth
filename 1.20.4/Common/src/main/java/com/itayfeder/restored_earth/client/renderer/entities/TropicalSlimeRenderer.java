@@ -1,6 +1,6 @@
 package com.itayfeder.restored_earth.client.renderer.entities;
 
-import com.itayfeder.restored_earth.client.renderer.ModModelLayers;
+import fuzs.refoundearth.client.init.ModModelLayers;
 import com.itayfeder.restored_earth.client.renderer.entities.layers.TropicalSlimeOuterLayer;
 import com.itayfeder.restored_earth.client.renderer.entities.models.TropicalSlimeModel;
 import fuzs.refoundearth.world.entity.monster.TropicalSlime;

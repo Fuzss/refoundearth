@@ -1,9 +1,8 @@
-package com.itayfeder.restored_earth.entities.projectiles;
+package fuzs.refoundearth.world.entity.projectile;
 
 import fuzs.refoundearth.init.ModEntityTypes;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
@@ -13,6 +12,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 
+/**
+ * Copied from {@link net.minecraft.world.entity.projectile.Snowball}.
+ */
 public class RottenFlesh extends ThrowableItemProjectile {
 
     public RottenFlesh(EntityType<? extends RottenFlesh> entityType, Level level) {
@@ -52,8 +54,7 @@ public class RottenFlesh extends ThrowableItemProjectile {
     @Override
     protected void onHitEntity(EntityHitResult hitResult) {
         super.onHitEntity(hitResult);
-        Entity entity = hitResult.getEntity();
-        entity.hurt(this.damageSources().thrown(this, this.getOwner()), 2.0F);
+        hitResult.getEntity().hurt(this.damageSources().thrown(this, this.getOwner()), 2.0F);
     }
 
     @Override

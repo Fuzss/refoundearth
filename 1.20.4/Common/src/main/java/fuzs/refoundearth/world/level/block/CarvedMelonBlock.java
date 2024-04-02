@@ -1,9 +1,9 @@
 package fuzs.refoundearth.world.level.block;
 
-import com.itayfeder.restored_earth.entities.MelonGolem;
 import com.mojang.serialization.MapCodec;
 import fuzs.refoundearth.init.ModBlocks;
 import fuzs.refoundearth.init.ModEntityTypes;
+import fuzs.refoundearth.world.entity.animal.MelonGolem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.dispenser.BlockSource;

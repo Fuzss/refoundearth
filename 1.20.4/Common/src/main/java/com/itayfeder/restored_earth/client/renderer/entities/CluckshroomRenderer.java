@@ -1,6 +1,6 @@
 package com.itayfeder.restored_earth.client.renderer.entities;
 
-import com.itayfeder.restored_earth.client.renderer.ModModelLayers;
+import fuzs.refoundearth.client.init.ModModelLayers;
 import com.itayfeder.restored_earth.client.renderer.entities.layers.CluckshroomMushroomLayer;
 import com.itayfeder.restored_earth.client.renderer.entities.models.CluckshroomModel;
 import com.itayfeder.restored_earth.entities.Cluckshroom;

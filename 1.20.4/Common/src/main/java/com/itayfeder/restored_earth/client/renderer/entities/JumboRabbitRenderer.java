@@ -1,6 +1,6 @@
 package com.itayfeder.restored_earth.client.renderer.entities;
 
-import com.itayfeder.restored_earth.client.renderer.ModModelLayers;
+import fuzs.refoundearth.client.init.ModModelLayers;
 import com.itayfeder.restored_earth.client.renderer.entities.models.JumboRabbitModel;
 import fuzs.refoundearth.world.entity.animal.EarthRabbit;
 import fuzs.refoundearth.RefoundEarth;

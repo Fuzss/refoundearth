@@ -1,6 +1,6 @@
 package com.itayfeder.restored_earth.client.renderer.entities.layers;
 
-import com.itayfeder.restored_earth.client.renderer.ModModelLayers;
+import fuzs.refoundearth.client.init.ModModelLayers;
 import com.itayfeder.restored_earth.client.renderer.entities.models.RainbowSheepModel;
 import com.itayfeder.restored_earth.client.renderer.entities.models.layers.RainbowSheepFurModel;
 import fuzs.refoundearth.world.entity.animal.RainbowSheep;

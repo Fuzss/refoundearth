@@ -1,7 +1,7 @@
 package fuzs.refoundearth.world.entity.animal;
 
-import com.itayfeder.restored_earth.entities.projectiles.MelonSeed;
 import fuzs.refoundearth.init.ModItems;
+import fuzs.refoundearth.world.entity.projectile.MelonSeed;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -21,13 +21,13 @@ import net.minecraft.world.entity.animal.SnowGolem;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.Snowball;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.Vec3;
 
-public class MelonGolem2 extends SnowGolem {
+public class MelonGolem extends SnowGolem {
     private static final EntityDataAccessor<Boolean> DATA_IS_CHARGING = SynchedEntityData.defineId(Ghast.class, EntityDataSerializers.BOOLEAN);
 
     private int jumpTicks;
@@ -35,7 +35,7 @@ public class MelonGolem2 extends SnowGolem {
     private boolean wasOnGround;
     private int jumpDelayTicks;
 
-    public MelonGolem2(EntityType<? extends SnowGolem> entityType, Level level) {
+    public MelonGolem(EntityType<? extends SnowGolem> entityType, Level level) {
         super(entityType, level);
         this.jumpControl = new MelonGolemJumpControl(this);
     }
@@ -65,15 +65,15 @@ public class MelonGolem2 extends SnowGolem {
 
     @Override
     public void performRangedAttack(LivingEntity target, float velocity) {
-        Snowball snowball = new MelonSeed(this.level(), this);
+        Projectile projectile = new MelonSeed(this.level(), this);
         double d = target.getEyeY() - 1.1;
         double e = target.getX() - this.getX();
-        double f = d - snowball.getY();
+        double f = d - projectile.getY();
         double g = target.getZ() - this.getZ();
         double h = Math.sqrt(e * e + g * g) * 0.2;
-        snowball.shoot(e, f + h, g, 1.6F, 12.0F);
+        projectile.shoot(e, f + h, g, 1.6F, 12.0F);
         this.playSound(SoundEvents.FOX_SPIT, 1.0F, 0.4F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
-        this.level().addFreshEntity(snowball);
+        this.level().addFreshEntity(projectile);
     }
 
     @Override
@@ -211,10 +211,10 @@ public class MelonGolem2 extends SnowGolem {
     }
 
     public static class MelonGolemJumpControl extends JumpControl {
-        private final MelonGolem2 rabbit;
+        private final MelonGolem rabbit;
         private boolean canJump;
 
-        public MelonGolemJumpControl(MelonGolem2 rabbit) {
+        public MelonGolemJumpControl(MelonGolem rabbit) {
             super(rabbit);
             this.rabbit = rabbit;
         }
@@ -241,9 +241,9 @@ public class MelonGolem2 extends SnowGolem {
     }
 
     public static class MelonGolemAttackGoal extends RangedAttackGoal {
-        private final MelonGolem2 melonGolem;
+        private final MelonGolem melonGolem;
 
-        public MelonGolemAttackGoal(MelonGolem2 rangedAttackMob, double speedModifier, int attackInterval, float attackRadius) {
+        public MelonGolemAttackGoal(MelonGolem rangedAttackMob, double speedModifier, int attackInterval, float attackRadius) {
             super(rangedAttackMob, speedModifier, attackInterval, attackRadius);
             this.melonGolem = rangedAttackMob;
         }

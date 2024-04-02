@@ -1,16 +1,13 @@
 package fuzs.refoundearth.client;
 
-import com.itayfeder.restored_earth.client.renderer.ModModelLayers;
-import com.itayfeder.restored_earth.client.renderer.blockentities.RainbowBedRenderer;
 import com.itayfeder.restored_earth.client.renderer.entities.*;
 import com.itayfeder.restored_earth.client.renderer.entities.models.*;
 import com.itayfeder.restored_earth.client.renderer.entities.models.layers.RainbowSheepFurModel;
 import fuzs.puzzleslib.api.client.core.v1.ClientModConstructor;
-import fuzs.puzzleslib.api.client.core.v1.context.BlockEntityRenderersContext;
 import fuzs.puzzleslib.api.client.core.v1.context.EntityRenderersContext;
 import fuzs.puzzleslib.api.client.core.v1.context.LayerDefinitionsContext;
 import fuzs.puzzleslib.api.client.core.v1.context.RenderTypesContext;
-import fuzs.refoundearth.init.ModBlockEntities;
+import fuzs.refoundearth.client.init.ModModelLayers;
 import fuzs.refoundearth.init.ModBlocks;
 import fuzs.refoundearth.init.ModEntityTypes;
 import net.minecraft.client.model.CowModel;
@@ -44,11 +41,6 @@ public class RefoundEarthClient implements ClientModConstructor {
         context.registerEntityRenderer(ModEntityTypes.LOBBER_ZOMBIE.value(), LobberZombieRenderer::new);
         context.registerEntityRenderer(ModEntityTypes.MELON_SEED.value(), MelonSeedRenderer::new);
         context.registerEntityRenderer(ModEntityTypes.ROTTEN_FLESH.value(), ThrownItemRenderer::new);
-    }
-
-    @Override
-    public void onRegisterBlockEntityRenderers(BlockEntityRenderersContext context) {
-        context.registerBlockEntityRenderer(ModBlockEntities.RAINBOW_BED.value(), RainbowBedRenderer::new);
     }
 
     @Override

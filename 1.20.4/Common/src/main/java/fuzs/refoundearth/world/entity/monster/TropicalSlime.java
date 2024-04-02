@@ -67,10 +67,13 @@ public class TropicalSlime extends Slime {
     }
 
     /**
-     * Copied from {@link HurtByTargetGoal} which has a stupid {@link PathfinderMob} restriction which is not even used.
+     * Copied from {@link HurtByTargetGoal} which has a stupid {@link PathfinderMob} restriction which is not even
+     * used.
      */
     static class GenericHurtByTargetGoal extends TargetGoal {
-        private static final TargetingConditions HURT_BY_TARGETING = TargetingConditions.forCombat().ignoreLineOfSight().ignoreInvisibilityTesting();
+        private static final TargetingConditions HURT_BY_TARGETING = TargetingConditions.forCombat()
+                .ignoreLineOfSight()
+                .ignoreInvisibilityTesting();
         private int timestamp;
         private final Class<?>[] toIgnoreDamage;
 
@@ -85,10 +88,11 @@ public class TropicalSlime extends Slime {
             int lastHurtByMobTimestamp = this.mob.getLastHurtByMobTimestamp();
             LivingEntity livingEntity = this.mob.getLastHurtByMob();
             if (lastHurtByMobTimestamp != this.timestamp && livingEntity != null) {
-                if (livingEntity.getType() == EntityType.PLAYER && this.mob.level().getGameRules().getBoolean(GameRules.RULE_UNIVERSAL_ANGER)) {
+                if (livingEntity.getType() == EntityType.PLAYER &&
+                        this.mob.level().getGameRules().getBoolean(GameRules.RULE_UNIVERSAL_ANGER)) {
                     return false;
                 } else {
-                    for(Class<?> class_ : this.toIgnoreDamage) {
+                    for (Class<?> class_ : this.toIgnoreDamage) {
                         if (class_.isAssignableFrom(livingEntity.getClass())) {
                             return false;
                         }
